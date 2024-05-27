@@ -21,7 +21,7 @@ sudo chmod +x aerolab
 ```
 
 
-**Getting Started**
+### **Getting Started**
 
 - Run aerolab -h to get details on different backend types supported by aerolab (we will be using containers for deployment)
 ```bash
@@ -48,5 +48,15 @@ aerolab conf generate
 ```
 ### Deploy a cluster called `testme` with 3 nodes
 ```
-aerolab cluster create --name=testme --count=5
+aerolab cluster create --name=testme --count=3
+```
+- See running containers:
+```bash
+(aerolab) shivanand.intern@PP-LLP45HJC7N aerolab % docker ps -a
+CONTAINER ID   IMAGE                                COMMAND                  CREATED          STATUS          PORTS                    NAMES
+d5de6605fe06   aerolab-ubuntu_22.04_arm64:7.1.0.0   "/bin/bash -c 'while…"   10 minutes ago   Up 10 minutes   0.0.0.0:3102->3102/tcp   aerolab-testme_3
+af126dd63296   aerolab-ubuntu_22.04_arm64:7.1.0.0   "/bin/bash -c 'while…"   10 minutes ago   Up 10 minutes   0.0.0.0:3101->3101/tcp   aerolab-testme_2
+f57ed720380c   aerolab-ubuntu_22.04_arm64:7.1.0.0   "/bin/bash -c 'while…"   10 minutes ago   Up 10 minutes   0.0.0.0:3100->3100/tcp   aerolab-testme_1
+
+
 ```
