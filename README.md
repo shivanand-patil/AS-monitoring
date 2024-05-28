@@ -8,22 +8,27 @@ NOTE: This exercise assumes to have aerolab installed and configured already, re
 
 ## Steps
 
-1. Clone the repo using:
+- Clone the repo using:
 ```bash
 git clone https://github.com/shivanand-patil/AS-monitoring.git
 ```
 
-2. To test and deploy clusters locally using docker run:
+- Set permissions
+```bash
+chmod +x *.sh
+```
+
+- To test and deploy clusters locally using docker run:
 ```bash
 ./create.sh
 ```
 
-3. Add load to clusters to mimic real-world workloads using:
+- Add load to clusters to mimic real-world workloads using:
 ```bash
 ./load.sh
 ```
 
-4. Destroy cluster
+- Destroy cluster
 ```bash
 ./destroy.sh
 ```
