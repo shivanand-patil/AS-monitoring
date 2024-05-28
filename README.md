@@ -38,3 +38,7 @@ chmod +x *.sh
 ```bash
 docker run -tid --name prometheus --link="aerolab_c-ams_1" -p 9090:9090 -v /Users/shivanand.intern/AS-monitoring/prometheus.yml:/etc/prometheus/prometheus.yml prom/prometheus:latest
 ```
+## Flow
+
+<img width="988" alt="Screenshot 2024-05-28 at 10 08 23 PM" src="https://github.com/shivanand-patil/AS-monitoring/assets/70444072/d04584da-1dd7-483f-840a-be05373fa21f">
+
