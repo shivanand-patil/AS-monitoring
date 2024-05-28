@@ -1,4 +1,4 @@
-# Aerolab guide
+# Aerolab Setup Guide
 
 - References https://github.com/aerospike/aerolab/blob/master/docs/GETTING_STARTED.md 
 
