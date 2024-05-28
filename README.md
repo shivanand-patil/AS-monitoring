@@ -1,6 +1,6 @@
 # Aerospike Monitoring Using Aerolab
 
-- reference: https://github.com/aerospike/aerospike-monitoring
+reference: https://github.com/aerospike/aerospike-monitoring
 
 This exercise focuses on monitoring aerospike database nodes across multiple clusters levaraging docker as a backend type, also mimicing xdr among diffent clusters.
 
@@ -31,4 +31,10 @@ chmod +x *.sh
 - Destroy cluster
 ```bash
 ./destroy.sh
+```
+### Run prometheus 
+
+- Run a Prometheus container and configure database containers as a scrape targets using [`prometheus.yml`](https://github.com/shivanand-patil/AS-monitoring/blob/main/prometheus.yml)
+```bash
+docker run -tid --name prometheus --link="aerolab_c-ams_1" -p 9090:9090 -v /Users/shivanand.intern/AS-monitoring/prometheus.yml:/etc/prometheus/prometheus.yml prom/prometheus:latest
 ```
