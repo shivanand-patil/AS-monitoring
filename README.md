@@ -1,62 +1,29 @@
-# Aerolab Setup Guide
+# Aerospike Monitoring Using Aerolab
 
-- References https://github.com/aerospike/aerolab/blob/master/docs/GETTING_STARTED.md 
+- reference: https://github.com/aerospike/aerospike-monitoring
 
-1. Install docker desktop on [mac](https://www.docker.com/products/docker-desktop/)
-2. install [aerolab-macos-arm64](https://github.com/aerospike/aerolab/releases/download/7.6.0-3a71c9d/aerolab-macos-arm64-7.6.0.zip) (or download any compatible version based on your system architecture)
-```
-wget https://github.com/aerospike/aerolab/releases/download/7.6.0-3a71c9d/aerolab-macos-arm64-7.6.0.zip
-```
-3. unzip tar file
-```bash 
-tar -xvf aerolab-macos-arm64-7.6.0.zip
-```
-4. set permissions for aerolab binary
+This exercise focuses on monitoring aerospike database nodes across multiple clusters levaraging docker as a backend type, also mimicing xdr among diffent clusters.
+
+NOTE: This exercise assumes to have aerolab tool installed and configured already, refer to [Aerolab setuo guide](https://github.com/shivanand-patil/AS-monitoring/blob/main/aerolab_setup.md) 
+
+## Steps
+
+1. Clone the repo using:
 ```bash
-sudo chmod +x aerolab
+git clone https://github.com/shivanand-patil/AS-monitoring.git
 ```
-5. move aerolab bin to `/usr/local/bin/` make it executable from anywhere
+
+2. To test and deploy clusters locally using docker run:
 ```bash
- sudo mv aerolab /usr/local/bin/
+./create.sh
 ```
 
-
-### **Getting Started**
-
-- Run aerolab -h to get details on different backend types supported by aerolab (we will be using containers for deployment)
+3. Add load to clusters to mimic real-world workloads using:
 ```bash
-aerolab --help
-```
-- Generate a basic aerospike database configuration file using command:
-```bash
-aerolab 
+./load.sh
 ```
 
-- Set docker as backend deployment type for aerolab to spinup aerolab test cluster on docker containers using the following command:
+4. Destroy cluster
 ```bash
-aerolab config backend -t docker -d /Users/shivanand.intern/aerolab
-```
-- To enable shell completion, run one (or both) of:
-
-```
-aerolab completion zsh
-aerolab completion bash
-```
-- Before spinning up a cluster generate a basic configuration for database nodes using:
-```bash
-aerolab conf generate
-```
-### Deploy a cluster called `testme` with 3 nodes
-```
-aerolab cluster create --name=testme --count=3
-```
-- See running containers:
-```bash
-(aerolab) shivanand.intern@PP-LLP45HJC7N aerolab % docker ps -a
-CONTAINER ID   IMAGE                                COMMAND                  CREATED          STATUS          PORTS                    NAMES
-d5de6605fe06   aerolab-ubuntu_22.04_arm64:7.1.0.0   "/bin/bash -c 'while…"   10 minutes ago   Up 10 minutes   0.0.0.0:3102->3102/tcp   aerolab-testme_3
-af126dd63296   aerolab-ubuntu_22.04_arm64:7.1.0.0   "/bin/bash -c 'while…"   10 minutes ago   Up 10 minutes   0.0.0.0:3101->3101/tcp   aerolab-testme_2
-f57ed720380c   aerolab-ubuntu_22.04_arm64:7.1.0.0   "/bin/bash -c 'while…"   10 minutes ago   Up 10 minutes   0.0.0.0:3100->3100/tcp   aerolab-testme_1
-
-
+./destroy.sh
 ```
