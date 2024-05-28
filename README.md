@@ -2,7 +2,7 @@
 
 reference: https://github.com/aerospike/aerospike-monitoring
 
-This exercise focuses on monitoring aerospike database nodes across multiple clusters levaraging docker as a backend type, also mimicing xdr among diffent clusters.
+This exercise focuses on monitoring aerospike database nodes across multiple clusters levaraging docker as a backend type, also mimicing xdr between two data centers (two different clusters).
 
 NOTE: This exercise assumes to have aerolab installed and configured already, refer to [Aerolab setup guide](https://github.com/shivanand-patil/AS-monitoring/blob/main/aerolab_setup.md) 
 
