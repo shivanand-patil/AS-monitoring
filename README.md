@@ -32,6 +32,16 @@ List the cluster details:
 ```bash
 aerolab cluster list
 ```
+```bash
+(aerolab) shivanand.intern@PP-LLP45HJC7N ~ % aerolab cluster list
+ CLUSTERS
+ ClusterName  NodeNo  State          PublicIP  PrivateIP   ExposedPort  Owner            AsdVer   Arch   Distro  DistroVer  InstanceID    ImageID                         ~
+ dc1          1       Up_28_minutes            172.17.0.2  3100         shivanandintern  7.1.0.0  arm64  ubuntu  22.04      bdb268ca810c  aerolab-ubuntu_22.04_arm64:7.1. ~
+ dc1          2       Up_28_minutes            172.17.0.3  3101         shivanandintern  7.1.0.0  arm64  ubuntu  22.04      b6a09792dcee  aerolab-ubuntu_22.04_arm64:7.1. ~
+ dc1          3       Up_14_minutes            172.17.0.6  3103         shivanandintern  7.1.0.0  arm64  ubuntu  22.04      7ef656efa693  aerolab-ubuntu_22.04_arm64:7.1. ~
+ dc1          4       Up_14_minutes            172.17.0.7  3104         shivanandintern  7.1.0.0  arm64  ubuntu  22.04      0d6bad008c5f  aerolab-ubuntu_22.04_arm64:7.1. ~
+ dc2          1       Up_28_minutes            172.17.0.4  3102         shivanandintern  7.1.0.0  arm64  ubuntu  22.04      d405fa600a74  aerolab-ubuntu_22.04_arm64:7.1. ~
+```
 Grow the cluster by adding nodes:
 ```bash
 aerolab cluster grow -n dc1 -c 2
