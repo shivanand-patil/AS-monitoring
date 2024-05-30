@@ -60,5 +60,5 @@ Destroy cluster
 
 ## Flow
 
-<img width="988" alt="Screenshot 2024-05-28 at 10 08 23 PM" src="https://github.com/shivanand-patil/AS-monitoring/assets/70444072/d04584da-1dd7-483f-840a-be05373fa21f">
+<img width="951" alt="Screenshot 2024-05-30 at 1 08 17 PM" src="https://github.com/shivanand-patil/AS-monitoring/assets/70444072/6764d7b0-480d-44ed-9b04-3a928f16e57a">
 
