@@ -6,6 +6,8 @@ This exercise focuses on monitoring aerospike database nodes across multiple clu
 
 NOTE: This exercise assumes to have aerolab installed and configured already, refer to [Aerolab setup guide](https://github.com/shivanand-patil/AS-monitoring/blob/main/aerolab_setup.md) 
 
+If you don't have aerolab installed, give [sinle node cluster](https://github.com/shivanand-patil/AS-monitoring/tree/main/single%20node%20cluster) a try, which will help you quickly spin up a single node cluster and setup aerospike montioring using prometheus and grafana using docker containers
+
 ## Steps
 
 Clone the repo using:
