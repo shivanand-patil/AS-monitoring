@@ -8,27 +8,42 @@ NOTE: This exercise assumes to have aerolab installed and configured already, re
 
 ## Steps
 
-- Clone the repo using:
+Clone the repo using:
 ```bash
 git clone https://github.com/shivanand-patil/AS-monitoring.git
 ```
 
-- Set permissions
+Set permissions
 ```bash
 chmod +x *.sh
 ```
 
-- To test and deploy clusters locally using docker run:
+To test and deploy clusters locally using docker run:
 ```bash
 ./create.sh
 ```
 
-- Add load to clusters to mimic real-world workloads using:
+Add load to clusters to mimic real-world workloads using:
 ```bash
 ./load.sh
+
+```
+List the cluster details:
+```bash
+aerolab cluster list
+```
+Grow the cluster by adding nodes:
+```bash
+aerolab cluster grow -n dc1 -c 2
 ```
 
-- Destroy cluster
+Configure prometheus for newly added nodes:
+```bash
+aerolab cluster add exporter -n dc1 -o ape1.toml --nodes 3,4
+```
+
+
+Destroy cluster
 ```bash
 ./destroy.sh
 ```
