@@ -17,6 +17,7 @@ git clone https://github.com/shivanand-patil/AS-monitoring.git
 
 Set permissions
 ```bash
+cd AS-monitoring
 chmod +x *.sh
 ```
 
